@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta http-equiv="Content-Security-Policy: connect-src http:"> 
+<title>Калькулятор времени</title>
+			<link rel="shortcut icon" href="images/icon.png">
+			
+			<link rel="stylesheet" href="css/styleforadminmenu.css">
+			<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+			<script src="https://code.createjs.com/easeljs-0.7.1.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+			<script src="js/functions.js"></script>
+		</head>
+<body>
+<div id="snowfall" class="obert">
+<canvas id="projector">.</canvas>
+
+<script src="js/particles.js"></script>
+<!-- Снег -->
+<!-- <script type='text/javascript' src='js/canvas-snow.js'></script>
+<script>
+	setTimeout(function() {
+		var options = {
+			flakeDensity: 7,
+			fallingSpeed: 2
+		};
+		var falling = new Blizzard('snowfall', options);
+	}, 100);
+</script> -->
+<!-- -- -->
+
+<div class="content">
+	<header>
+		<nav>
+			<ul class="topmenu">
+				<li class="topmenu-box"><div class="submenu-link">Хэлперы <img src="images/helper.png"/></div>
+					<ul class="submenu">
+						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561198346511645'); enterAdminNick('Хэлпер | Flayzy Aweiro')">Flayzy Aweiro</button></li>
+						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561198360929815'); enterAdminNick('Хэлпер | Leonardo Johnson')">Leonardo Johnson</button></li>
+						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561198826613736'); enterAdminNick('Хэлпер | Felix Olegovich')">Felix Olegovich</button></li>
+					</ul>
+				</li>
+				<li class="topmenu-box"><div class="submenu-link">Модераторы <img src="images/moder.png"/></div>
+					<ul class="submenu">
+						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561198020444493'); enterAdminNick('Модератор | Виталя Галушков (⭐️)')">Виталя Галушков</button></li>
+					</ul>
+				</li>
+				<li class="topmenu-box-pusto"><div class="submenu-link-pusto">Администраторы <img src="images/odmen.png"/></div>
+					<ul class="submenu">
+
+					</ul>
+				</li>
+				<li class="topmenu-box"><div class="submenu-link">Proxy <img src="images/proxy.png"/></div>
+					<ul class="submenu">
+						<li><button type="button" class="btn btn-outline-success" onclick="ProxyCalc('76561198853895480'); enterAdminNick('Proxy | Андрей Рипов')">Андрей Рипов</button></li>
+						<li><button type="button" class="btn btn-outline-success" onclick="ProxyCalc('76561198868809232'); enterAdminNick('Proxy | Том Гринвич (⭐️)')">Том Гринвич</button></li>
+						<li><button type="button" class="btn btn-outline-success" onclick="ProxyCalc('76561198952239050'); enterAdminNick('Proxy | Grim House (⭐️⭐️⭐️)')">Grim House</button></li>
+					</ul>
+				</li>
+			  	<li class="topmenu-box-pusto"><div class="submenu-link-pusto">Стажёры в СА<img src="images/stazher.png"/></div>
+				  	<ul class="submenu">
+
+				  	</ul>
+			    </li>
+			</ul>
+		</nav>
+	</header>
+
+
+	<iframe class="serverstat" src="https://www.gs4u.net/ru/webmod/frame-map:0;splr:0;players:113;mfs:100;mac:6d6d6d;mahc:8f8f8f;sna:ff0000;mbg:030303;bg:030303;fg:00ff00;snb:00ff00;itc:aaaaaa;shs:0;/gmod/46.174.54.156:27015.html" frameborder="0" scrolling="no" width="1110" height="196" marginwidth="0" marginheight="0"></iframe>
+	
+	<!-- <div class="alert alert-danger" role="alert">
+		<strong>Внимание! Введены тестовые функции.</strong> Они могут плохо работать или не работать вовсе! Тестовые функции выделены красным цветом.
+	</div> -->
+
+	<div id="podskaz" class="alert alert-warning alert-dismissible fade show" role="alert">
+		<strong>ℹ️ Подсказка!</strong> Выбери администратора из списка сверху. Количество часов в профессии администратора за текущую неделю и итоговый результат появятся снизу автоматически. <strong>Результат выводится за 1-2 секунды.</strong> Если результат не выводится, то напиши <a href="https://vk.com/serfersmith" class="alert-link">сюда</a>.
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		  <span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<script>
+		setTimeout(function(){
+			document.getElementById('podskaz').style.display = 'none';
+		}, 15000);
+	</script>
+	
+	<div id="audio"></div>
+	<div id="audioNumber" style="color: white; font-size: 17px; font-weight: bold; text-align: center"></div>
+	
+	<script>
+		console.log('Загрузка 22 треков.')
+		let sound_id = Math.floor(Math.random() * 22) + 1
+		console.log('Подключение трека № '+sound_id+'.');
+		playlist(0.2);
+	</script>
+
+	<div id="adminNick" class="adminName"></div>
+
+	<div id="timer"></div>
+
+   	<table style="border: 4px solid black; display: none;">
+  		<tr>
+			<td>
+			<p class="time">
+			<h1 id="hrs" class="d-inline align-center"></h1>
+			<h2 id="min" class="d-inline"></h2>
+			<h3 id="sec" class="d-inline"></h3></p>
+			</td>
+		</tr>
+	</table>
+
+	<div id=result class="resultat"></div>
+
+	<br>
+	
+	<div class="textContainer">
+	<textarea id="CopyTimeBox" placeholder="В этом поле выводится время, наигранное за неделю конкретным админом. Вносить сюда информацию нельзя." readonly rows="7" class="col-sm-12"></textarea>
+	</div>
+
+	<br>
+
+	<!-- Кнопки для тестов калькулятора -->
+	<!-- <div class="col-sm-12">
+	     <input type="button" onclick="show('result'); show('timer'); calculate();" value="ПОСЧИТАТЬ" title="Эта кнопка скоро исчезнет... Ну ничего! Её заменят новые!" class="btn btn-primary btn-lg btn-block"></input>
+	</div>
+
+	<div class="col-sm-12">
+		<input type="button" onclick="show('result'); show('timer'); calculateProxy()" value="ПОСЧИТАТЬ (Для Proxy)" title="Эта кнопка скоро исчезнет... Ну ничего! Её заменят новые!" class="btn btn-info btn-sm btn-block"></input>
+   </div> -->
+   <!-- ------------------------------- -->
+	<br>
+
+	<div class="col-sm-12" id="knopki">
+		<input type="button" onclick="showHide('system')" data-toggle="button" aria-pressed="false" value="Система повышений ▼" class="btn btn-info btn-lg" style="font-weight: bold;"></input>
+		<input type="button" onclick="resetValue('CopyTimeBox'); hide('result'); hide('timer'); hide('adminNick')" value="Очистить" class="btn btn-danger btn-lg" style="font-weight: bold;">
+		<a href="https://docs.google.com/document/d/1OmzsHtzWtJxRWtaUBGREMDPp2K26Zc3crdG_wTXFON0" target="_blank" class="btn btn-success btn-lg" role="button" style="font-weight: bold;">Таблица администрации</a>
+   	</div>
+
+	<br>
+
+	<div id="system" class="AdminUpSystem" style="display: none;">
+		<h1>Система повышения наборной администрации</h1>
+		<div>Хэлпер 🢂 Модератор (Необходимо <img src="images/star.png" width="35px" height="35px"><img src="images/star.png" width="35px" height="35px">)</div>
+		<div>Модератор 🢂 Администратор (Необходимо <img src="images/star.png" width="35px" height="35px"><img src="images/star.png" width="35px" height="35px"><img src="images/star.png" width="35px" height="35px">)</div>
+		<div>Администратор 🢂 Proxy (Необходимо <img src="images/star.png" width="35px" height="35px"><img src="images/star.png" width="35px" height="35px"><img src="images/star.png" width="35px" height="35px"><img src="images/star.png" width="35px" height="35px">)</div>
+		<div>Proxy 🢂 Stazher (На усмотрение Рук. состава)</div>
+		<div class="UpInfo">При переходе на следующий ранг собранные звезды тратятся!</div>
+		<br>
+		<br>
+		<br>
+		<h1>Соотношение наигранного админ. времени с получаемыми звездами</h1>
+		<div>НОРМА — 15 часов в неделю (для Proxy и Stazher — 13)</div>
+		<div><img src="images/star.png" width="35px" height="35px"> — 20 часов</div>
+		<div><img src="images/star.png" width="35px" height="35px"><img src="images/star.png" width="35px" height="35px"> — 27 часов</div>
+		<div><img src="images/star.png" width="35px" height="35px"><img src="images/star.png" width="35px" height="35px"><img src="images/star.png" width="35px" height="35px"> — 35 часов</div>
+		<div><img src="images/star.png" width="35px" height="35px"><img src="images/star.png" width="35px" height="35px"><img src="images/star.png" width="35px" height="35px"><img src="images/star.png" width="35px" height="35px"> — 42 часа</div>
+		<div>&#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160<img src="images/star.png" width="35px" height="35px"><img src="images/star.png" width="35px" height="35px"><img src="images/star.png" width="35px" height="35px"><img src="images/star.png" width="35px" height="35px"><img src="images/star.png" width="35px" height="35px"> — 50 часов и более</div>
+		<div class="UpInfo" style="line-height: 25px;">Администратор может получить и больше звёзд за одну неделю, но они выдаются индивидуально и на усмотрение Руководителя Администрации.</div>
+		<br>
+		<div class="UpInfo" style="line-height: 25px; color: tomato;">Наборному администратору могут быть зачислены деньги на донатный счёт Руководителем Администрации в качестве поощрения! Предметы, купленные за эти деньги, могут быть использованы администратором когда угодно. Передача купленных предметов другим игрокам разрешена, пока администратор находится в составе наборной администрации! По выходу из наборной администрации, все купленные предметы, оставшиеся в инвентаре донатного меню, к передаче строго запрещены! Обнаружение таких передач повлечет наказание!</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<h3>Для снятия выговора, нужно потратить 3 звезды повышения!</h3>
+	</div>
+
+
+</div>
+
+
+<div class="col-sm-12" id="updateInfo">
+	<div>Последнее обновление: &#160 <span id="UpdateDate">02.06.2021</span></div>
+	<input type="button" onclick="showHide('updateList')" data-toggle="button" aria-pressed="false" value="Список изменений ▼" class="btn btn-dark" style="font-weight: bold;"></input>
+	<div id="updateList" style="display: none;">
+		1) Администрация обновлена.
+	</div>
+
+	<div> &copy; 2021 Рэй Плекс</div>
+</div>
+
+</div>
+</body>
+
+
+
+</html>
