@@ -39,25 +39,26 @@
 					<ul class="submenu">
 						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561198346511645'); enterAdminNick('Хэлпер | Flayzy Aweiro')">Flayzy Aweiro</button></li>
 						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561198360929815'); enterAdminNick('Хэлпер | Leonardo Johnson')">Leonardo Johnson</button></li>
-						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561198826613736'); enterAdminNick('Хэлпер | Pepez Marense')">Pepez Marense</button></li>
 						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561198134479101'); enterAdminNick('Хэлпер (Испытательный срок) | Валера Соколов')">Валера Соколов</button></li>
 					</ul>
 				</li>
 				<li class="topmenu-box"><div class="submenu-link">Модераторы <img src="images/moder.png"/></div>
 					<ul class="submenu">
-						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561198020444493'); enterAdminNick('Модератор | Виталя Галушков (⭐️)')">Виталя Галушков</button></li>
+						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561198826613736'); enterAdminNick('Модератор | Pepez Marense')">Pepez Marense</button></li>
+
 					</ul>
 				</li>
-				<li class="topmenu-box-pusto"><div class="submenu-link-pusto">Администраторы <img src="images/odmen.png"/></div>
+				<li class="topmenu-box"><div class="submenu-link">Администраторы <img src="images/odmen.png"/></div>
 					<ul class="submenu">
-
+						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561198020444493'); enterAdminNick('Администратор | Виталя Галушков | ❌')">Виталя Галушков</button></li>
 					</ul>
 				</li>
 				<li class="topmenu-box"><div class="submenu-link">Proxy <img src="images/proxy.png"/></div>
 					<ul class="submenu">
-						<li><button type="button" class="btn btn-outline-success" onclick="ProxyCalc('76561198853895480'); enterAdminNick('Proxy | Андрей Рипов')">Андрей Рипов</button></li>
-						<li><button type="button" class="btn btn-outline-success" onclick="ProxyCalc('76561198868809232'); enterAdminNick('Proxy | Том Гринвич (⭐️)')">Том Гринвич</button></li>
-						<li><button type="button" class="btn btn-outline-success" onclick="ProxyCalc('76561198952239050'); enterAdminNick('Proxy | Grim House (⭐️⭐️⭐️)')">Grim House</button></li>
+						<li><button style="color: darkgrey;" type="button" class="btn btn-outline-success" onclick="ProxyCalc('76561198853895480'); enterAdminNick('Proxy (Заморожен) | Андрей Рипов | ❌')">💤Андрей Рипов💤</button></li>
+						<!-- <li><button style="color: darkgrey;" type="button" class="btn btn-outline-success" onclick="ProxyCalc('76561198853895480'); enterAdminNick('Proxy (Заморожен) | Андрей Рипов')">💤Андрей Рипов💤</button></li> -->
+						<li><button type="button" class="btn btn-outline-success" onclick="ProxyCalc('76561198868809232'); enterAdminNick('Proxy | Том Гринвич | ⭐️')">Том Гринвич</button></li>
+						<li><button type="button" class="btn btn-outline-success" onclick="ProxyCalc('76561198952239050'); enterAdminNick('Proxy | Grim House | ⭐️⭐️⭐️')">Grim House</button></li>
 					</ul>
 				</li>
 			  	<li class="topmenu-box-pusto"><div class="submenu-link-pusto">Стажёры в СА<img src="images/stazher.png"/></div>
@@ -77,16 +78,19 @@
 	</div> -->
 
 	<div id="podskaz" class="alert alert-warning alert-dismissible fade show" role="alert">
-		<strong>ℹ️ Подсказка!</strong> Выбери администратора из списка сверху. Количество часов в профессии администратора за текущую неделю и итоговый результат появятся снизу автоматически. <strong>Результат выводится за 1-2 секунды.</strong> Если результат не выводится, то напиши <a href="https://vk.com/serfersmith" class="alert-link">сюда</a>.
+		<strong>ℹ️ Подсказка!</strong>
+		<br>Выбери администратора из списка сверху. Суммарное время администрирования, логи времени администрирования, количество звёзд повышения и количество выговоров появятся сразу после выбора администратора.<strong>Результат выводится примерно за 1-2 секунды.</strong> Если результат не выводится, то напиши <a href="https://vk.com/serfersmith" class="alert-link">Рэю</a>.
+		<br>⭐️ - одна звезда повышения.
+		<br>❌ - один выговор.
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 		  <span aria-hidden="true">&times;</span>
 		</button>
 	</div>
-	<script>
+	<!-- <script>
 		setTimeout(function(){
 			document.getElementById('podskaz').style.display = 'none';
 		}, 15000);
-	</script>
+	</script> -->
 	
 	<div id="audio"></div>
 	<div id="audioNumber" style="color: white; font-size: 17px; font-weight: bold; text-align: center"></div>
@@ -177,7 +181,7 @@
 
 
 <div class="col-sm-12" id="updateInfo">
-	<div>Последнее обновление: &#160 <span id="UpdateDate">05.06.2021</span></div>
+	<div>Последнее обновление: &#160 <span id="UpdateDate">07.06.2021</span></div>
 	<input type="button" onclick="showHide('updateList')" data-toggle="button" aria-pressed="false" value="Список изменений ▼" class="btn btn-dark" style="font-weight: bold;"></input>
 	<div id="updateList" style="display: none;">
 		1) Администрация обновлена.
