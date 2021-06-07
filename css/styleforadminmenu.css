@@ -180,7 +180,10 @@ table{
 
 .textContainer > #CopyTimeBox{
   outline: none;
-  border: 3px solid #009200;
+  /* border: 3px solid #009200; */
+  border: 3px solid orange;
+  background-color: lightgoldenrodyellow;
+  filter: opacity(0.9);
   border-radius: 10px;
   left: 23%;
   text-align: center;

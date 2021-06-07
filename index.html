@@ -17,7 +17,7 @@
 <div id="snowfall" class="obert">
 <canvas id="projector">.</canvas>
 
-<script src="js/particles.js"></script>
+<!-- <script src="js/particles.js"></script> -->
 <!-- Снег -->
 <!-- <script type='text/javascript' src='js/canvas-snow.js'></script>
 <script>
@@ -39,7 +39,7 @@
 					<ul class="submenu">
 						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561198346511645'); enterAdminNick('Хэлпер | Flayzy Aweiro')">Flayzy Aweiro</button></li>
 						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561198360929815'); enterAdminNick('Хэлпер | Leonardo Johnson')">Leonardo Johnson</button></li>
-						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561198134479101'); enterAdminNick('Хэлпер (Испытательный срок) | Валера Соколов')">Валера Соколов</button></li>
+						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561198134479101'); enterAdminNick('Хэлпер | Валера Соколов')">Валера Соколов</button></li>
 					</ul>
 				</li>
 				<li class="topmenu-box"><div class="submenu-link">Модераторы <img src="images/moder.png"/></div>
@@ -55,7 +55,7 @@
 				</li>
 				<li class="topmenu-box"><div class="submenu-link">Proxy <img src="images/proxy.png"/></div>
 					<ul class="submenu">
-						<li><button style="color: darkgrey;" type="button" class="btn btn-outline-success" onclick="ProxyCalc('76561198853895480'); enterAdminNick('Proxy (Заморожен) | Андрей Рипов | ❌')">💤Андрей Рипов💤</button></li>
+						<li><button type="button" class="btn btn-outline-warning" onclick="ProxyCalc('freeze'); enterAdminNick('Proxy | Андрей Рипов | ❌')">💤 Андрей Рипов 💤</button></li> <!-- ProxyCalc('76561198853895480') -->
 						<!-- <li><button style="color: darkgrey;" type="button" class="btn btn-outline-success" onclick="ProxyCalc('76561198853895480'); enterAdminNick('Proxy (Заморожен) | Андрей Рипов')">💤Андрей Рипов💤</button></li> -->
 						<li><button type="button" class="btn btn-outline-success" onclick="ProxyCalc('76561198868809232'); enterAdminNick('Proxy | Том Гринвич | ⭐️')">Том Гринвич</button></li>
 						<li><button type="button" class="btn btn-outline-success" onclick="ProxyCalc('76561198952239050'); enterAdminNick('Proxy | Grim House | ⭐️⭐️⭐️')">Grim House</button></li>
@@ -73,27 +73,27 @@
 
 	<iframe class="serverstat" src="https://www.gs4u.net/ru/webmod/frame-map:0;splr:0;players:113;mfs:100;mac:6d6d6d;mahc:8f8f8f;sna:ff0000;mbg:030303;bg:030303;fg:00ff00;snb:00ff00;itc:aaaaaa;shs:0;/gmod/46.174.54.156:27015.html" frameborder="0" scrolling="no" width="1110" height="196" marginwidth="0" marginheight="0"></iframe>
 	
-	<!-- <div class="alert alert-danger" role="alert">
-		<strong>Внимание! Введены тестовые функции.</strong> Они могут плохо работать или не работать вовсе! Тестовые функции выделены красным цветом.
-	</div> -->
+	<div class="alert alert-danger" role="alert">
+		<strong>Внимание! Ведутся работы!</strong> Функция получения времени может работать плохо или не работать вовсе!
+	</div>
 
 	<div id="podskaz" class="alert alert-warning alert-dismissible fade show" role="alert">
 		<strong>ℹ️ Подсказка!</strong>
-		<br>Выбери администратора из списка сверху. Суммарное время администрирования, логи времени администрирования, количество звёзд повышения и количество выговоров появятся сразу после выбора администратора.<strong>Результат выводится примерно за 1-2 секунды.</strong> Если результат не выводится, то напиши <a href="https://vk.com/serfersmith" class="alert-link">Рэю</a>.
+		<br>Выбери администратора из списка сверху. Суммарное время администрирования, логи времени администрирования, количество звёзд повышения и количество выговоров появятся сразу после выбора администратора.<strong> Результат выводится примерно за 1-2 секунды.</strong> Если результат не выводится, то напиши <a href="https://vk.com/serfersmith" class="alert-link">Рэю</a>.
 		<br>⭐️ - одна звезда повышения.
 		<br>❌ - один выговор.
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 		  <span aria-hidden="true">&times;</span>
 		</button>
 	</div>
-	<!-- <script>
+	<script>
 		setTimeout(function(){
 			document.getElementById('podskaz').style.display = 'none';
 		}, 15000);
-	</script> -->
+	</script>
 	
 	<div id="audio"></div>
-	<div id="audioNumber" style="color: white; font-size: 17px; font-weight: bold; text-align: center"></div>
+	<div id="audioNumber" style="color: white; font-size: 20px; font-weight: bold; text-align: center"></div>
 	
 	<script>
 		console.log('Загрузка 22 треков.')
@@ -122,7 +122,7 @@
 	<br>
 	
 	<div class="textContainer">
-	<textarea id="CopyTimeBox" placeholder="В этом поле выводится время, наигранное за неделю конкретным админом. Вносить сюда информацию нельзя." readonly rows="7" class="col-sm-12"></textarea>
+	<textarea id="CopyTimeBox" placeholder="В этом поле выводится время, наигранное за неделю конкретным админом. Вносить сюда информацию нельзя." readonly rows="3" class="col-sm-12"></textarea>
 	</div>
 
 	<br>
@@ -185,6 +185,8 @@
 	<input type="button" onclick="showHide('updateList')" data-toggle="button" aria-pressed="false" value="Список изменений ▼" class="btn btn-dark" style="font-weight: bold;"></input>
 	<div id="updateList" style="display: none;">
 		1) Администрация обновлена.
+		<br>2) Немного нововведений в интерфейс.
+		<br>3) Временно отключены частицы для увеличения скорости загрузки страницы.
 	</div>
 
 	<div> &copy; 2021 Рэй Плекс</div>
