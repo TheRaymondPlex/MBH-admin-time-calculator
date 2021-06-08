@@ -263,7 +263,7 @@ var calculateProxy = function () { // Калькулятор времени дл
 
 function resetValue(elem) { // Очистка элемента
         elem = document.getElementById(elem);
-        elem.rows = "3";
+        elem.rows = "2";
         elem.style = "border: 3px solid orange; background-color: lightgoldenrodyellow;"
         elem.value = "";
 }

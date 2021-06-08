@@ -18,6 +18,7 @@
 <canvas id="projector">.</canvas>
 
 <!-- <script src="js/particles.js"></script> -->
+
 <!-- Снег -->
 <!-- <script type='text/javascript' src='js/canvas-snow.js'></script>
 <script>
@@ -32,6 +33,10 @@
 <!-- -- -->
 
 <div class="content">
+	<div style="position: relative;">
+	<img src="images/logo.png" alt="маг. будни" style="width:100%;  background-size: auto; background-color: rgba(0, 0, 0, 0.5);">
+	<input type="button" onclick="showHide('serverStatistics')" data-toggle="button" aria-pressed="false" value="Статистика сервера" class="btn btn-outline-success btn-sm" style="position: absolute; right: 0.1%; top: 75%;"></input>
+	</div>
 	<header>
 		<nav>
 			<ul class="topmenu">
@@ -70,16 +75,17 @@
 		</nav>
 	</header>
 
-
-	<iframe class="serverstat" src="https://www.gs4u.net/ru/webmod/frame-map:0;splr:0;players:113;mfs:100;mac:6d6d6d;mahc:8f8f8f;sna:ff0000;mbg:030303;bg:030303;fg:00ff00;snb:00ff00;itc:aaaaaa;shs:0;/gmod/46.174.54.156:27015.html" frameborder="0" scrolling="no" width="1110" height="196" marginwidth="0" marginheight="0"></iframe>
 	
+
+	<!-- <iframe id="serverStatistics" class="serverstat" style="display: none;" src="https://www.gs4u.net/ru/webmod/frame-map:0;splr:0;players:113;mfs:100;mac:6d6d6d;mahc:8f8f8f;sna:ff0000;mbg:030303;bg:030303;fg:00ff00;snb:00ff00;itc:aaaaaa;shs:0;/gmod/46.174.54.156:27015.html" frameborder="0" scrolling="no" width="1110" height="196" marginwidth="0" marginheight="0"></iframe> -->
+	<iframe id="serverStatistics" class="serverstat" style="display: none;" src="https://www.gs4u.net/ru/webmod/frame-map:0;splr:1;players:166;mfs:100;mac:ff0303;mahc:5c5959;sna:ff0000;mbg:;bg:;fg:00ff0d;snb:00ff33;itc:d1d1d1;shs:0;/s/76273.html" frameborder="0" scrolling="no" width="500" height="383" marginwidth="0" marginheight="0"></iframe>
 	<!-- <div class="alert alert-danger" role="alert">
 		<strong>Внимание! Ведутся работы!</strong> Функция получения времени может работать плохо или не работать вовсе!
 	</div> -->
 
 	<div id="podskaz" class="alert alert-warning alert-dismissible fade show" role="alert">
-		<strong>ℹ️ Подсказка!</strong> (Закроется через <span class="display">30</span> секунд)
-		<br>Выбери администратора из списка сверху. Суммарное время администрирования, логи времени администрирования, количество звёзд повышения и количество выговоров появятся сразу после выбора администратора.<strong> Результат выводится примерно за 1-2 секунды.</strong> Если результат не выводится, то напиши <a href="https://vk.com/serfersmith" class="alert-link">Рэю</a>.
+		<strong>ℹ️ Подсказка!</strong> (Закроется через <span class="display">25</span> сек.)
+		<br>Выбери администратора из списка сверху. Суммарное время администрирования, логи времени администрирования, количество звёзд повышения и количество выговоров появятся сразу после выбора администратора.<strong> Результат выводится примерно за 1-2 секунды.</strong> Если результат не выводится, то напиши <a href="https://vk.com/serfersmith" class="alert-link">Рэю</a>. Предложения по улучшению этого мини-сайта приветствуются.
 		<br>⭐️ - одна звезда повышения.
 		<br>❌ - один выговор.
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -105,7 +111,7 @@
 		})(document)
 	</script>
 	
-	<div id="audio"></div>
+	<!-- <div id="audio"></div>
 	<div id="audioNumber" style="color: white; font-size: 20px; font-weight: bold; text-align: center"></div>
 	
 	<script>
@@ -113,7 +119,7 @@
 		let sound_id = Math.floor(Math.random() * 22) + 1
 		console.log('Подключение трека № '+sound_id+'.');
 		playlist(0.1);
-	</script>
+	</script> -->
 
 	<div id="adminNick" class="adminName"></div>
 
@@ -135,7 +141,7 @@
 	<br>
 	
 	<div class="textContainer">
-	<textarea id="CopyTimeBox" placeholder="В этом поле выводится время, наигранное за неделю конкретным админом. Вносить сюда информацию нельзя." readonly rows="3" class="col-sm-12"></textarea>
+	<textarea id="CopyTimeBox" placeholder="В этом поле выводятся логи времени. Вносить сюда информацию нельзя." readonly rows="2" class="col-sm-12"></textarea>
 	</div>
 
 	<br>
@@ -189,17 +195,28 @@
 		<h3>Для снятия выговора, нужно потратить 3 звезды повышения!</h3>
 	</div>
 
+	<br>
+	<br>
+
+	<div id="audioNumber" style="color: #ff9900;; font-size: 20px; font-weight: bold; text-align: center"></div>
+	<div id="audio"></div>
+	<script>
+		console.log('Загрузка 22 треков.')
+		let sound_id = Math.floor(Math.random() * 22) + 1
+		console.log('Подключение трека № '+sound_id+'.');
+		playlist(0.1);
+	</script>
+
 
 </div>
 
 
 <div class="col-sm-12" id="updateInfo">
-	<div>Последнее обновление: &#160 <span id="UpdateDate">07.06.2021</span></div>
+	<div>Последнее обновление: &#160 <span id="UpdateDate">09.06.2021</span></div>
 	<input type="button" onclick="showHide('updateList')" data-toggle="button" aria-pressed="false" value="Список изменений ▼" class="btn btn-dark" style="font-weight: bold;"></input>
 	<div id="updateList" style="display: none;">
-		1) Администрация обновлена.
-		<br>2) Немного нововведений в интерфейс.
-		<br>3) Временно отключены частицы для увеличения скорости загрузки страницы.
+	1) Немного нововведений в интерфейс.
+	<br>2) Временно отключены частицы для увеличения скорости загрузки страницы.
 	</div>
 
 	<div> &copy; 2021 Рэй Плекс</div>
