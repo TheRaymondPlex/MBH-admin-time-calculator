@@ -55,7 +55,7 @@
 				</li>
 				<li class="topmenu-box"><div class="submenu-link">Proxy <img src="images/proxy.png"/></div>
 					<ul class="submenu">
-						<li><button type="button" class="btn btn-outline-danger" onclick="ProxyCalc('freeze'); enterAdminNick('Proxy | Андрей Рипов | ❌')">💤 Андрей Рипов 💤</button></li> <!-- ProxyCalc('76561198853895480') -->
+						<li><button type="button" class="btn btn-outline-dark" onclick="ProxyCalc('freeze'); enterAdminNick('Proxy | Андрей Рипов | ❌')">Андрей Рипов</button></li> <!-- ProxyCalc('76561198853895480') -->
 						<!-- <li><button style="color: darkgrey;" type="button" class="btn btn-outline-success" onclick="ProxyCalc('76561198853895480'); enterAdminNick('Proxy (Заморожен) | Андрей Рипов')">💤Андрей Рипов💤</button></li> -->
 						<li><button type="button" class="btn btn-outline-success" onclick="ProxyCalc('76561198868809232'); enterAdminNick('Proxy | Том Гринвич | ⭐️')">Том Гринвич</button></li>
 						<li><button type="button" class="btn btn-outline-success" onclick="ProxyCalc('76561198952239050'); enterAdminNick('Proxy | Grim House | ⭐️⭐️⭐️')">Grim House</button></li>
@@ -78,7 +78,7 @@
 	</div> -->
 
 	<div id="podskaz" class="alert alert-warning alert-dismissible fade show" role="alert">
-		<strong>ℹ️ Подсказка!</strong>
+		<strong>ℹ️ Подсказка!</strong> (Закроется через <span class="display">30</span> секунд)
 		<br>Выбери администратора из списка сверху. Суммарное время администрирования, логи времени администрирования, количество звёзд повышения и количество выговоров появятся сразу после выбора администратора.<strong> Результат выводится примерно за 1-2 секунды.</strong> Если результат не выводится, то напиши <a href="https://vk.com/serfersmith" class="alert-link">Рэю</a>.
 		<br>⭐️ - одна звезда повышения.
 		<br>❌ - один выговор.
@@ -87,9 +87,22 @@
 		</button>
 	</div>
 	<script>
-		setTimeout(function(){
-			document.getElementById('podskaz').style.display = 'none';
-		}, 15000);
+		// setTimeout(function(){
+		// 	document.getElementById('podskaz').style.display = 'none';
+		// }, 15000);
+
+		(function(d){
+  			var display = d.querySelector('#podskaz .display') // меняющаяся цифра
+			var timeLeft = parseInt(display.innerHTML) // оставшееся время
+ 			var timer = setInterval(function(){
+ 			if (--timeLeft > 0) { // если таймер всё еще больше нуля
+  			  	display.innerHTML = timeLeft // обновляем цифру
+  			} else {
+				clearInterval(timer) // удаляем таймер 
+  			  	d.querySelector('#podskaz').style.display = 'none' // прячем текст
+    		}
+  			}, 1000)  // таймер срабатывает каждые 1000 msec (1 sec)
+		})(document)
 	</script>
 	
 	<div id="audio"></div>
