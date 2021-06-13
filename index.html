@@ -42,27 +42,25 @@
 			<ul class="topmenu">
 				<li class="topmenu-box"><div class="submenu-link">Хэлперы <img src="images/helper.png"/></div>
 					<ul class="submenu">
-						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561198346511645'); enterAdminNick('Хэлпер | Flayzy Aweiro')">Flayzy Aweiro</button></li>
-						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561198360929815'); enterAdminNick('Хэлпер | Leonardo Johnson')">Leonardo Johnson</button></li>
+						<li><button type="button" class="btn btn-outline-dark" style="color: darkgray;" onclick="AdminCalc('freeze'); enterAdminNick('Хэлпер | Flayzy Aweiro')">Flayzy Aweiro</button></li> <!-- AdminCalc('76561198346511645') -->
 						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561198134479101'); enterAdminNick('Хэлпер | Валера Соколов')">Валера Соколов</button></li>
 					</ul>
 				</li>
-				<li class="topmenu-box"><div class="submenu-link">Модераторы <img src="images/moder.png"/></div>
+				<li class="topmenu-box-pusto"><div class="submenu-link-pusto">Модераторы <img src="images/moder.png"/></div>
 					<ul class="submenu">
-						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561198826613736'); enterAdminNick('Модератор | Pepez Marense')">Pepez Marense</button></li>
 
 					</ul>
 				</li>
 				<li class="topmenu-box"><div class="submenu-link">Администраторы <img src="images/odmen.png"/></div>
 					<ul class="submenu">
 						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561198020444493'); enterAdminNick('Администратор | Виталя Галушков | ❌')">Виталя Галушков</button></li>
+						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561198826613736'); enterAdminNick('Администратор | Pepez Marense')">Pepez Marense</button></li>
 					</ul>
 				</li>
 				<li class="topmenu-box"><div class="submenu-link">Proxy <img src="images/proxy.png"/></div>
 					<ul class="submenu">
-						<li><button type="button" class="btn btn-outline-dark" onclick="ProxyCalc('freeze'); enterAdminNick('Proxy | Андрей Рипов | ❌')">Андрей Рипов</button></li> <!-- ProxyCalc('76561198853895480') -->
-						<!-- <li><button style="color: darkgrey;" type="button" class="btn btn-outline-success" onclick="ProxyCalc('76561198853895480'); enterAdminNick('Proxy (Заморожен) | Андрей Рипов')">💤Андрей Рипов💤</button></li> -->
-						<li><button type="button" class="btn btn-outline-success" onclick="ProxyCalc('76561198868809232'); enterAdminNick('Proxy | Том Гринвич | ⭐️')">Том Гринвич</button></li>
+						<li><button type="button" class="btn btn-outline-dark" style="color: darkgray;" onclick="ProxyCalc('freeze'); enterAdminNick('Proxy | Андрей Рипов | ❌')">Андрей Рипов</button></li> <!-- ProxyCalc('76561198853895480') -->
+						<li><button type="button" class="btn btn-outline-dark" style="color: darkgray;" onclick="ProxyCalc('freeze'); enterAdminNick('Proxy | Том Гринвич | ⭐️')">Том Гринвич</button></li> <!-- ProxyCalc('76561198868809232') -->
 						<li><button type="button" class="btn btn-outline-success" onclick="ProxyCalc('76561198952239050'); enterAdminNick('Proxy | Grim House | ⭐️⭐️⭐️')">Grim House</button></li>
 					</ul>
 				</li>
@@ -204,7 +202,7 @@
 		console.log('Загрузка 22 треков.')
 		let sound_id = Math.floor(Math.random() * 22) + 1
 		console.log('Подключение трека № '+sound_id+'.');
-		playlist(0.1);
+		playlist(0.05);
 	</script>
 
 
@@ -212,11 +210,10 @@
 
 
 <div class="col-sm-12" id="updateInfo">
-	<div>Последнее обновление: &#160 <span id="UpdateDate">09.06.2021</span></div>
+	<div>Последнее обновление: &#160 <span id="UpdateDate">13.06.2021</span></div>
 	<input type="button" onclick="showHide('updateList')" data-toggle="button" aria-pressed="false" value="Список изменений ▼" class="btn btn-dark" style="font-weight: bold;"></input>
 	<div id="updateList" style="display: flex;">
-			1) Немного нововведений в интерфейс.
-		<br>2) Временно отключены частицы для увеличения скорости загрузки страницы.
+		1) Обновление администрации.
 	</div>
 
 	<div> &copy; 2021 Рэй Плекс</div>
@@ -224,7 +221,4 @@
 
 </div>
 </body>
-
-
-
 </html>
