@@ -8,6 +8,20 @@ body {
   background-size: cover;
 }
 
+.mlStazher {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  border: solid 3px #ffd900;
+  border-radius: 5%;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffd900;
+  width: 100%;
+}
+
 .content {
   padding: 0 calc(50vw - 610px);
 }
@@ -46,8 +60,8 @@ nav ul {
 }
 
 .topmenu:after {
-  content: "";
   display: table;
+  content: "";
   clear: both;
 }
 
@@ -80,10 +94,18 @@ opacity: 1;
   padding: 15px 30px;
   filter: brightness(0,9);
   transition: 0.2s;
+  border-top: solid 2px darkgreen;
+  border-radius: 5%;
+  transition: .3s;
+}
+
+.topmenu-box:hover > div {
+  border-top: solid 2px rgb(0, 255, 0);
+  color: orangered;
+  filter: brightness(1);
 }
 
 .topmenu li a:hover { color: orange }
-.topmenu > .topmenu-box > div:hover { color: orangered; filter: brightness(1)}
 .topmenu > .topmenu-box-pusto:hover { opacity: 0.8;}
 .topmenu > .topmenu-box-pusto > div:hover { color: #ffd900;}
 .submenu-link:after {
@@ -201,6 +223,7 @@ table{
 .AdminUpSystem {
   display: flex;
   border: 4px solid orangered;
+  border-radius: 3%;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
@@ -211,7 +234,7 @@ table{
 
 .AdminUpSystem > div {
   font-family: 'Comic Sans MS', cursive;
-  font-size: 30px;
+  font-size: 27px;
   color: #D5B45B;
   width: auto;
   height: 45px;
@@ -220,19 +243,19 @@ table{
 .AdminUpSystem > h3 {
   font-weight: bold;
   color: red;
-  font-size: 35px;
+  font-size: 33px;
 }
 
 .AdminUpSystem > h1 {
   font-weight: bold;
-  color: rgb(101, 188, 214);
+  color: rgb(255, 106, 106);
   font-size: 30px;
-}
-
-.AdminUpSystem .UpInfo {
-  color: orangered;
-  font-size: 25px;
-  text-align: center;
+  text-decoration: underline rgb(255, 106, 106);
+  text-align: left;
+  border-left: solid 5px red;
+  width: 96%;
+  padding-left: 20px;
+  margin-top: 30px;
 }
 
 #knopki {
