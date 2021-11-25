@@ -20,16 +20,16 @@
 <!-- <script src="js/particles.js"></script> -->
 
 <!-- Снег -->
-<!-- <script type='text/javascript' src='js/canvas-snow.js'></script>
+<script type='text/javascript' src='js/canvas-snow.js'></script>
 <script>
 	setTimeout(function() {
 		var options = {
-			flakeDensity: 7,
-			fallingSpeed: 2
+			flakeDensity: 1,
+			fallingSpeed: 1.5
 		};
 		var falling = new Blizzard('snowfall', options);
 	}, 100);
-</script> -->
+</script>
 <!-- -- -->
 
 <div class="content">
@@ -44,8 +44,6 @@
 					<ul class="submenu">
 						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561198425360821'); enterAdminNick(`<img src='images/helper.png' width='45' height='45'/> Влад Залысинов`)">Влад Залысинов</button></li>
 						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561199117647487'); enterAdminNick(`<img src='images/helper.png' width='45' height='45'/> Мира Василькова`)">Мира Василькова</button></li>
-						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561199060365642'); enterAdminNick(`<img src='images/helper.png' width='45' height='45'/> Mike Rose | ⭐️`)">Mike Rose</button></li>
-						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561199007605313'); enterAdminNick(`<img src='images/helper.png' width='45' height='45'/> Арсений Блэйд`)">Арсений Блэйд</button></li>
 						<!-- <li><div class="mlStazher">
 							Младший стажёр<br>
 							<button type="button" class="btn btn-outline-warning" style="font-weight: bold; color: black;" onclick="AdminCalc('76561199007605313'); enterAdminNick(`Арсений Блэйд | Куратор - <span style='color: red'>Alex Herberd</span>`)">Арсений Блэйд</button>
@@ -55,6 +53,8 @@
 				<li class="topmenu-box"><div class="submenu-link">Модераторы <img src="images/moder.png" width='20' height='20'/></div>
 					<ul class="submenu">
 						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561198394052909'); enterAdminNick(`<img src='images/moder.png' width='45' height='45'/> Alan Tornado | ❌❌`)">Alan Tornado</button></li>
+						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561199007605313'); enterAdminNick(`<img src='images/moder.png' width='45' height='45'/> Арсений Блэйд`)">Арсений Блэйд</button></li>
+						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561199060365642'); enterAdminNick(`<img src='images/moder.png' width='45' height='45'/> Mike Rose | ⭐️`)">Mike Rose</button></li>
 					</ul>
 				</li>
 				<li class="topmenu-box-pusto"><div class="submenu-link-pusto">Администраторы <img src="images/odmen.png" width='20' height='20'/></div>
@@ -64,7 +64,7 @@
 				</li>
 				<li class="topmenu-box"><div class="submenu-link">Proxy <img src="images/proxy.png" width='20' height='20'/></div>
 					<ul class="submenu">
-						<li><button type="button" class="btn btn-outline-success" onclick="ProxyCalc('freeze'); enterAdminNick(`<img src='images/proxy.png' width='45' height='45'/> Pepez Marense | ⭐️`)">Pepez Marense</button></li> <!-- 76561198826613736 -->
+						<li><button type="button" class="btn btn-outline-success" onclick="ProxyCalc('76561198826613736'); enterAdminNick(`<img src='images/proxy.png' width='45' height='45'/> Pepez Marense | ⭐️`)">Pepez Marense</button></li> <!-- 76561198826613736 -->
 						<li><button type="button" class="btn btn-outline-success" onclick="ProxyCalc('76561198346511645'); enterAdminNick(`<img src='images/proxy.png' width='45' height='45'/> Flayzy Aweiro`)">Flayzy Aweiro</button></li> <!-- 76561198346511645 -->
 						<li><button type="button" class="btn btn-outline-success" onclick="ProxyCalc('76561199029961841'); enterAdminNick(`<img src='images/proxy.png' width='45' height='45'/> Alex Herberd | ⭐️`)">Alex Herberd</button></li> <!-- 76561199029961841 -->
 					</ul>
@@ -82,12 +82,12 @@
 
 	<!-- <iframe id="serverStatistics" class="serverstat" style="display: none;" src="https://www.gs4u.net/ru/webmod/frame-map:0;splr:0;players:113;mfs:100;mac:6d6d6d;mahc:8f8f8f;sna:ff0000;mbg:030303;bg:030303;fg:00ff00;snb:00ff00;itc:aaaaaa;shs:0;/gmod/46.174.54.156:27015.html" frameborder="0" scrolling="no" width="1110" height="196" marginwidth="0" marginheight="0"></iframe> -->
 	<iframe id="serverStatistics" class="serverstat" style="display: none;" src="https://www.gs4u.net/ru/webmod/frame-map:0;splr:1;players:166;mfs:100;mac:ff0303;mahc:5c5959;sna:ff0000;mbg:;bg:;fg:00ff0d;snb:00ff33;itc:d1d1d1;shs:0;/s/76273.html" frameborder="0" scrolling="no" width="500" height="383" marginwidth="0" marginheight="0"></iframe>
-	<!-- <div class="alert alert-danger" role="alert">
-		<strong>❗️ Внимание! Ведутся работы!</strong> Функция получения времени может работать плохо или не работать вовсе!
-	</div> -->
+	<div class="alert alert-info" role="alert">
+		<strong>Сорри за задержку обновы!</strong> Много других дел было...
+	</div>
 
 	<div id="podskaz" class="alert alert-warning alert-dismissible fade show" role="alert">
-		<strong>ℹ️ Подсказка</strong> (Закроется через <span class="display">25</span> сек.)
+		<strong>Подсказка</strong> (Закроется через <span class="display">25</span> сек.)
 		<br>Выбери администратора из списка сверху. Суммарное время администрирования, логи времени администрирования,
 		количество звёзд повышения и количество выговоров появятся сразу после выбора администратора.
 		<strong> Результат выводится примерно за 1-2 секунды.</strong> Если результат не выводится,
@@ -217,7 +217,7 @@
 
 
 <div class="col-sm-12" id="updateInfo">
-	<div>Последнее обновление: &#160 <span id="UpdateDate">17.11.2021</span></div>
+	<div>Последнее обновление: &#160 <span id="UpdateDate">25.11.2021</span></div>
 	<input type="button" onclick="showHide('updateList')" data-toggle="button" aria-pressed="false" value="Список изменений ▼" class="btn btn-dark" style="font-weight: bold;"></input>
 	<div id="updateList" style="display: flex;">
 		1) Актуализация информации об администрации.
