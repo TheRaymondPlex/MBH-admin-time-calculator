@@ -17,15 +17,15 @@
 <div id="snowfall" class="obert">
 <canvas id="projector">.</canvas>
 
-<!-- <script src="js/particles.js"></script> -->
+<script src="js/particles.js"></script>
 
 <!-- Снег -->
 <script type='text/javascript' src='js/canvas-snow.js'></script>
 <script>
 	setTimeout(function() {
 		var options = {
-			flakeDensity: 1,
-			fallingSpeed: 1.5
+			flakeDensity: 10,
+			fallingSpeed: 2
 		};
 		var falling = new Blizzard('snowfall', options);
 	}, 100);
@@ -42,7 +42,7 @@
 			<ul class="topmenu">
 				<li class="topmenu-box"><div class="submenu-link">Хэлперы <img src="images/helper.png" width='20' height='20'/></div>
 					<ul class="submenu">
-						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561198425360821'); enterAdminNick(`<img src='images/helper.png' width='45' height='45'/> Влад Залысинов`)">Влад Залысинов</button></li>
+						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561198425360821'); enterAdminNick(`<img src='images/helper.png' width='45' height='45'/> Влад Залысинов | ❌`)">Влад Залысинов</button></li>
 						<!-- <li><div class="mlStazher">
 							Младший стажёр<br>
 							<button type="button" class="btn btn-outline-warning" style="font-weight: bold; color: black;" onclick="AdminCalc(''); enterAdminNick(`Арсений Блэйд | Куратор - <span style='color: red'>Alex Herberd</span>`)">Арсений Блэйд</button>
@@ -51,14 +51,13 @@
 				</li>
 				<li class="topmenu-box"><div class="submenu-link">Модераторы <img src="images/moder.png" width='20' height='20'/></div>
 					<ul class="submenu">
-						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561199007605313'); enterAdminNick(`<img src='images/moder.png' width='45' height='45'/> Арсений Блэйд | ⭐️`)">Арсений Блэйд</button></li>
-						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561199060365642'); enterAdminNick(`<img src='images/moder.png' width='45' height='45'/> Mike Rose | ⭐️`)">Mike Rose</button></li>
-						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561199117647487'); enterAdminNick(`<img src='images/moder.png' width='45' height='45'/> Мира Василькова | ⭐️⭐️`)">Мира Василькова</button></li>
+						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561199060365642'); enterAdminNick(`<img src='images/moder.png' width='45' height='45'/> Mike Rose | ⭐️❌`)">Mike Rose</button></li>
 					</ul>
 				</li>
-				<li class="topmenu-box-pusto"><div class="submenu-link-pusto">Администраторы <img src="images/odmen.png" width='20' height='20'/></div>
+				<li class="topmenu-box"><div class="submenu-link">Администраторы <img src="images/odmen.png" width='20' height='20'/></div>
 					<ul class="submenu">
-
+						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561199117647487'); enterAdminNick(`<img src='images/odmen.png' width='45' height='45'/> Мира Василькова`)">Мира Василькова</button></li>						
+						<li><button type="button" class="btn btn-outline-success" onclick="AdminCalc('76561199007605313'); enterAdminNick(`<img src='images/odmen.png' width='45' height='45'/> Арсений Блэйд`)">Арсений Блэйд</button></li>
 					</ul>
 				</li>
 				<li class="topmenu-box"><div class="submenu-link">Proxy <img src="images/proxy.png" width='20' height='20'/></div>
@@ -216,10 +215,12 @@
 
 
 <div class="col-sm-12" id="updateInfo">
-	<div>Последнее обновление: &#160 <span id="UpdateDate">2929.11.2021</span></div>
-	<input type="button" onclick="showHide('updateList')" data-toggle="button" aria-pressed="false" value="Список изменений ▼" class="btn btn-dark" style="font-weight: bold;"></input>
+	<div>Последнее обновление: &#160 <span id="UpdateDate">05.12.2021</span></div>
+	<input type="button" onclick="showHide('updateList')" data-toggle="button" aria-pressed="true" value="Список изменений ▼" class="btn btn-dark" style="font-weight: bold;"></input>
 	<div id="updateList" style="display: flex;">
 		1) Актуализация информации об администрации.
+		<br>
+		2) ❄️ Зима пришла ❄️
 	</div>
 </div>
 

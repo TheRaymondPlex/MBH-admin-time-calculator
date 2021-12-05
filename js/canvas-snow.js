@@ -71,7 +71,7 @@ function Blizzard(parentId, customOptions) {
             flakes.push({
                 x: Math.random() * W, //x-coordinate
                 y: Math.random() * H, //y-coordinate
-                r: Math.random() * 1 + 1 //radius
+                r: Math.random() * 1.5 + 1 //radius
             });
         }
 
