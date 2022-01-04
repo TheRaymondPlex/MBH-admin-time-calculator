@@ -10,23 +10,25 @@ async function AdminCalc(id) { // Отправление запроса на п�
     }
     elem.rows = "7";
     elem.style = "border: 3px solid orange; background-color: lightgoldenrodyellow";
-    elem.value = "\n\n\n= 🌐 = Получение информации = 🌐 =";
-    let response = await fetch('https://1122etrfig.execute-api.us-east-1.amazonaws.com/dev/time/'+id);
-    var data = await response.text();
-    if (data == "Unable to reach upstream server") {
-        // alert('Ошибка! \nЗа эту неделю данный администратор не был в профессии админа!');
-        elem.rows = "2.5";
-        elem.value = "= ⚠️ = Ошибка! = ⚠️ =\nЗа эту неделю данный администратор ещё не был в профессии админа!";
-        elem.style = "border: 3px solid red; background-color: lightcoral";
-        hide('timer');
-        hide('result');
-        data = 0;
-        return 0;
-    }
-    elem.value = data;
-    calculate();
-    show('timer');
-    show('result');
+    window.open('http://rushogwarts.myarena.ru/time/'+id, '_blank');
+    elem.value = " ";
+    // elem.value = "\n\n\n= 🌐 = Получение информации = 🌐 =";
+    // let response = await fetch('https://1122etrfig.execute-api.us-east-1.amazonaws.com/dev/time/'+id);
+    // var data = await response.text();
+    // if (data == "Unable to reach upstream server") {
+    //     // alert('Ошибка! \nЗа эту неделю данный администратор не был в профессии админа!');
+    //     elem.rows = "2.5";
+    //     elem.value = "= ⚠️ = Ошибка! = ⚠️ =\nЗа эту неделю данный администратор ещё не был в профессии админа!";
+    //     elem.style = "border: 3px solid red; background-color: lightcoral";
+    //     hide('timer');
+    //     hide('result');
+    //     data = 0;
+    //     return 0;
+    // }
+    // elem.value = data;
+    // calculate();
+    // show('timer');
+    // show('result');
   }
   // AdminCalc().then(data => console.log(data));
 
@@ -42,23 +44,25 @@ async function ProxyCalc(id) { // Отправление запроса на п�
     }
     elem.rows = "7";
     elem.style = "border: 3px solid orange; background-color: lightgoldenrodyellow";
-    elem.value = "\n\n\n= 🌐 = Получение информации = 🌐 =";
-    let response = await fetch('https://1122etrfig.execute-api.us-east-1.amazonaws.com/dev/time/'+id);
-    var data = await response.text();
-    if (data == "Unable to reach upstream server") {
-        // alert('Ошибка! \nЗа эту неделю данный администратор не был в профессии админа!');
-        elem.rows = "2.5";
-        elem.style = "border: 3px solid red; background-color: lightcoral";
-        elem.value = "= ⚠️ = Ошибка! = ⚠️ =\nЗа эту неделю данный администратор ещё не был в профессии админа!";
-        hide('timer');
-        hide('result');
-        data = 0;
-        return 0;
-    }
-    elem.value = data;
-    calculateProxy();
-    show('timer');
-    show('result');
+    window.open('http://rushogwarts.myarena.ru/time/'+id, '_blank');
+    elem.value = " ";
+    // elem.value = "\n\n\n= 🌐 = Получение информации = 🌐 =";
+    // let response = await fetch('https://1122etrfig.execute-api.us-east-1.amazonaws.com/dev/time/'+id);
+    // var data = await response.text();
+    // if (data == "Unable to reach upstream server") {
+    //     // alert('Ошибка! \nЗа эту неделю данный администратор не был в профессии админа!');
+    //     elem.rows = "2.5";
+    //     elem.style = "border: 3px solid red; background-color: lightcoral";
+    //     elem.value = "= ⚠️ = Ошибка! = ⚠️ =\nЗа эту неделю данный администратор ещё не был в профессии админа!";
+    //     hide('timer');
+    //     hide('result');
+    //     data = 0;
+    //     return 0;
+    // }
+    // elem.value = data;
+    // calculateProxy();
+    // show('timer');
+    // show('result');
   }
   // ProxyCalc().then(data => console.log(data));
 
