@@ -79,15 +79,19 @@
 
 	<!-- <iframe id="serverStatistics" class="serverstat" style="display: none;" src="https://www.gs4u.net/ru/webmod/frame-map:0;splr:0;players:113;mfs:100;mac:6d6d6d;mahc:8f8f8f;sna:ff0000;mbg:030303;bg:030303;fg:00ff00;snb:00ff00;itc:aaaaaa;shs:0;/gmod/46.174.54.156:27015.html" frameborder="0" scrolling="no" width="1110" height="196" marginwidth="0" marginheight="0"></iframe> -->
 	<iframe id="serverStatistics" class="serverstat" style="display: none;" src="https://www.gs4u.net/ru/webmod/frame-map:0;splr:1;players:166;mfs:100;mac:ff0303;mahc:5c5959;sna:ff0000;mbg:;bg:;fg:00ff0d;snb:00ff33;itc:d1d1d1;shs:0;/s/76273.html" frameborder="0" scrolling="no" width="500" height="383" marginwidth="0" marginheight="0"></iframe>
-	<div class="alert alert-danger" role="alert">
+	<!-- <div class="alert alert-danger" role="alert">
 		<strong>⚠️ Автоподсчёт админ-часов временно не работает!</strong> Сорри за невозможность быстро исправить функциональность. Проблема уже решается. А пока, чтобы посчитать свои часы, следуй инструкции ниже.
 		<hr> 1. Выбери администратора из меню сверху, как обычно. Откроется ссылка с логами. 
 		<br> 2. Cкопируй весь текст из открывшейся ссылки и вставь в поле для ввода.
 		<br> 3. Нажми кнопку "Посчитать" внизу.
 		<br> 4. Нажми кнопку "Очистить", чтобы посчитать часы другого администратора.
+	</div> -->
+
+	<div class="alert alert-success" role="alert">
+		<strong>✅ Работоспособность автоподсчёта времени восстановлена!</strong>
 	</div>
 
-	<!-- <div id="podskaz" class="alert alert-warning alert-dismissible fade show" role="alert">
+	<div id="podskaz" class="alert alert-warning alert-dismissible fade show" role="alert">
 		<strong>Подсказка</strong> (Закроется через <span class="display">25</span> сек.)
 		<br>Выбери администратора из списка сверху. Суммарное время администрирования, логи времени администрирования,
 		количество звёзд повышения и количество выговоров появятся сразу после выбора администратора.
@@ -100,7 +104,7 @@
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 		  <span aria-hidden="true">&times;</span>
 		</button>
-	</div> -->
+	</div>
 	<script>
 		// setTimeout(function(){
 		// 	document.getElementById('podskaz').style.display = 'none';
@@ -150,20 +154,20 @@
 	<br>
 	
 	<div class="textContainer">
-	<!-- <textarea id="CopyTimeBox" placeholder="В этом поле выводятся логи времени. Вносить сюда информацию нельзя." readonly rows="2" class="col-sm-12"></textarea> -->
-	<textarea id="CopyTimeBox" placeholder="Вставь скопированные логи времени сюда" rows="2" class="col-sm-12"></textarea>
+	<textarea id="CopyTimeBox" placeholder="В этом поле выводятся логи времени. Вносить сюда информацию нельзя." readonly rows="2" class="col-sm-12"></textarea>
+	<!-- <textarea id="CopyTimeBox" placeholder="Вставь скопированные логи времени сюда" rows="2" class="col-sm-12"></textarea> -->
 	</div>
 
 	<br>
 
 	<!-- Кнопки для тестов калькулятора -->
-	<div class="col-sm-12">
+	<!-- <div class="col-sm-12">
 	     <input type="button" onclick="show('result'); show('timer'); calculate();" value="ПОСЧИТАТЬ" class="btn btn-primary btn-lg btn-block"></input>
 	</div>
 
 	<div class="col-sm-12">
 		<input type="button" onclick="show('result'); show('timer'); calculateProxy()" value="ПОСЧИТАТЬ (Для Proxy)" class="btn btn-info btn-sm btn-block"></input>
-   </div>
+   </div> -->
    <!-- ------------------------------- -->
 	<br>
 
@@ -219,12 +223,12 @@
 
 
 <div class="col-sm-12" id="updateInfo">
-	<div>Последнее обновление: &#160 <span id="UpdateDate">04.01.2022</span></div>
+	<div>Последнее обновление: &#160 <span id="UpdateDate">05.01.2022</span></div>
 	<input type="button" onclick="showHide('updateList')" data-toggle="button" aria-pressed="true" value="Список изменений ▼" class="btn btn-dark" style="font-weight: bold;"></input>
 	<div id="updateList" style="display: flex;">
 		1) Актуализация информации об администрации.
 		<br>
-		2) Отключён автоподсчет времени. Временно переведено на ручной режим.
+		2) Фикс Proxy-сервера и функции автоподсчёта часов.
 	</div>
 </div>
 
