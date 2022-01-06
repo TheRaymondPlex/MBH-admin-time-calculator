@@ -132,7 +132,7 @@ var calculate = function () { // Калькулятор времени для а
 
     let AdminTime = '';
     if (hrs < 15 ) {  // Окраска рамки в красный или зеленый, в зависимости от выполненной нормы.
-        AdminTime = `<table style="border: 4px solid red;" id="table1">
+        AdminTime = `<table id="table1">
                     <tr>
                         <td>
                             <p class="time">
@@ -143,9 +143,9 @@ var calculate = function () { // Калькулятор времени для а
                         </td>
                     </tr>
                     </table>`;
-        elem.style = "border: 3px solid red"};
+        elem.style = "border: 4px solid red"};
     if (hrs >= 15) {
-        AdminTime = `<table style="border: 4px solid #2ce614;" id="table1">
+        AdminTime = `<table id="table1">
                     <tr>
                         <td>
                             <p class="time">
@@ -156,9 +156,9 @@ var calculate = function () { // Калькулятор времени для а
                         </td>
                     </tr>
                     </table>`;
-        elem.style = "border: 3px solid #009200; background-color: lightgreen"};
+        elem.style = "border: 4px solid #009200; background-color: lightgreen"};
     if (hrs == 15 && min == 0 && sec == 0) {
-        AdminTime = `<table style="border: 4px solid darkviolet;" id="table1">
+        AdminTime = `<table id="table1">
                     <tr>
                         <td>
                             <p class="time">
@@ -169,7 +169,7 @@ var calculate = function () { // Калькулятор времени для а
                         </td>
                     </tr>
                     </table>`;
-        elem.style = "border: 3px solid darkviolet; background-color: lightgreen"}
+        elem.style = "border: 4px solid darkviolet; background-color: violet"}
 
     timer.innerHTML = AdminTime;
 
@@ -229,7 +229,7 @@ var calculateProxy = function () { // Калькулятор времени дл
 
     let AdminTime = '';
     if (hrs < 13 ) {  // Окраска рамки в красный или зеленый, в зависимости от выполненной нормы.
-        AdminTime = `<table style="border: 4px solid red;" id="table1">
+        AdminTime = `<table id="table1">
                     <tr>
                         <td>
                             <p class="time">
@@ -240,9 +240,9 @@ var calculateProxy = function () { // Калькулятор времени дл
                         </td>
                     </tr>
                     </table>`;
-        elem.style = "border: 3px solid red"};
+        elem.style = "border: 4px solid red"};
     if (hrs >= 13) {
-        AdminTime = `<table style="border: 4px solid #2ce614;" id="table1">
+        AdminTime = `<table id="table1">
                     <tr>
                         <td>
                             <p class="time">
@@ -253,9 +253,9 @@ var calculateProxy = function () { // Калькулятор времени дл
                         </td>
                     </tr>
                     </table>`;
-        elem.style = "border: 3px solid #009200; background-color: lightgreen"};
+        elem.style = "border: 4px solid #009200; background-color: lightgreen"};
     if (hrs == 13 && min == 0 && sec == 0) {
-        AdminTime = `<table style="border: 4px solid darkviolet;" id="table1">
+        AdminTime = `<table id="table1">
                     <tr>
                         <td>
                             <p class="time">
@@ -266,7 +266,7 @@ var calculateProxy = function () { // Калькулятор времени дл
                         </td>
                     </tr>
                     </table>`;
-        elem.style = "border: 3px solid darkviolet; background-color: lightgreen"}
+        elem.style = "border: 4px solid darkviolet; background-color: violet"}
 
     timer.innerHTML = AdminTime;
 
