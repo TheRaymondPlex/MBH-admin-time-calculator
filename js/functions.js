@@ -13,7 +13,7 @@ async function AdminCalc(id) { // Отправление запроса на п�
     // window.open('http://rushogwarts.myarena.ru/time/'+id, '_blank');
     // elem.value = " ";
     elem.value = "\n\n\n= 🌐 = Получение информации = 🌐 =";
-    let response = await fetch('https://m1l4y1qv72.execute-api.us-east-1.amazonaws.com/dev/time/'+id);
+    let response = await fetch('https://dsi3hmj2hf.execute-api.us-east-1.amazonaws.com/dev/time/'+id);
     var data = await response.text();
     if (data == "Unable to reach upstream server") {
         // alert('Ошибка! \nЗа эту неделю данный администратор не был в профессии админа!');
@@ -47,7 +47,7 @@ async function ProxyCalc(id) { // Отправление запроса на п�
     // window.open('http://rushogwarts.myarena.ru/time/'+id, '_blank');
     // elem.value = " ";
     elem.value = "\n\n\n= 🌐 = Получение информации = 🌐 =";
-    let response = await fetch('https://m1l4y1qv72.execute-api.us-east-1.amazonaws.com/dev/time/'+id);
+    let response = await fetch('https://dsi3hmj2hf.execute-api.us-east-1.amazonaws.com/dev/time/'+id);
     var data = await response.text();
     if (data == "Unable to reach upstream server") {
         // alert('Ошибка! \nЗа эту неделю данный администратор не был в профессии админа!');
@@ -181,7 +181,7 @@ var calculate = function () { // Калькулятор времени для а
 
     let resultat = (hrs <= 14) ? '<div style="color: red;">Нормы нет</div>' :
                    (hrs == 15 && min == 0 && sec == 0) ? '<div style="color: mediumorchid;">⭐️ 💎 ⭐️ Шедеврально! Ювелирно! Оргазм! ⭐️ 💎 ⭐️</div>' :
-                   (hrs == 15 && min == 0 && sec <= 3) ? '<div style="color: mediumorchid;">Ну бл*... Почти ювелир💎</div>' :
+                   (hrs == 15 && min == 0 && sec <= 4) ? '<div style="color: mediumorchid;">Ну бл*... Почти ювелир💎</div>' :
                    (hrs < 20) ? '<div style="color: #2ce614;">Норма есть</div>' :
                    (hrs < 27) ? '<img src="images/star.png" width="50px" height="50px">' :
                    (hrs < 35) ? '<img src="images/star.png" width="50px" height="50px">&#8195<img src="images/star.png" width="50px" height="50px">' :
@@ -278,7 +278,7 @@ var calculateProxy = function () { // Калькулятор времени дл
 
     let resultat = (hrs <= 12) ? '<div style="color: red;">Нормы нет</div>' :
                    (hrs == 13 && min == 0 && sec == 0) ? '<div style="color: mediumorchid;">⭐️ 💎 ⭐️ Шедеврально! Ювелирно! Оргазм! ⭐️ 💎 ⭐️</div>' :
-                   (hrs == 13 && min == 0 && sec <= 3) ? '<div style="color: mediumorchid;">Ну бл*... Почти ювелир💎</div>' :
+                   (hrs == 13 && min == 0 && sec <= 4) ? '<div style="color: mediumorchid;">Ну бл*... Почти ювелир💎</div>' :
                    (hrs < 20) ? '<div style="color: #2ce614;">Норма есть</div>' :
                    (hrs < 27) ? '<img src="images/star.png" width="50px" height="50px">' :
                    (hrs < 35) ? '<img src="images/star.png" width="50px" height="50px">&#8195<img src="images/star.png" width="50px" height="50px">' :
