@@ -131,7 +131,7 @@ var calculate = function () { // Калькулятор времени для а
     // console.log(sec);
 
     let AdminTime = '';
-    if (hrs < 15 ) {  // Окраска рамки в красный или зеленый, в зависимости от выполненной нормы.
+    if (hrs < 15) {
         AdminTime = `<table id="table1">
                     <tr>
                         <td>
@@ -143,7 +143,20 @@ var calculate = function () { // Калькулятор времени для а
                         </td>
                     </tr>
                     </table>`;
-        elem.style = "border: 4px solid red"};
+        elem.style = "border: 4px solid #009200; background-color: lightgreen"};
+    // if (hrs < 15 ) {  // Окраска рамки в красный или зеленый, в зависимости от выполненной нормы.
+    //     AdminTime = `<table id="table1">
+    //                 <tr>
+    //                     <td>
+    //                         <p class="time">
+    //                             <h1 class="d-inline-block .center-block">Часы: &#160</h1><h1 id="hrs" class="d-inline align-center"></h1>
+    //                             <h2 class="d-inline-block">&#160 Минуты: &#160</h2><h1 id="min" class="d-inline"></h1>
+    //                             <h2 class="d-inline-block">&#160 Секунды: &#160</h2><h1 id="sec" class="d-inline"></h1>
+    //                         </p>
+    //                     </td>
+    //                 </tr>
+    //                 </table>`;
+    //     elem.style = "border: 4px solid red"};
     if (hrs >= 15) {
         AdminTime = `<table id="table1">
                     <tr>
@@ -179,7 +192,8 @@ var calculate = function () { // Калькулятор времени для а
     document.getElementById("sec").innerHTML = sec;
     
 
-    let resultat = (hrs <= 14) ? '<div style="color: red;">Нормы нет</div>' :
+    let resultat = (hrs <= 14) ? '<div style="color: #2ce614;">Норма временно отменена</div>' :
+    // let resultat = (hrs <= 14) ? '<div style="color: red;">Нормы нет</div>' :
                    (hrs == 15 && min == 0 && sec == 0) ? '<div style="color: mediumorchid;">⭐️ 💎 ⭐️ Шедеврально! Ювелирно! Оргазм! ⭐️ 💎 ⭐️</div>' :
                    (hrs == 15 && min == 0 && sec <= 4) ? '<div style="color: mediumorchid;">Ну бл*... Почти ювелир💎</div>' :
                    (hrs < 20) ? '<div style="color: #2ce614;">Норма есть</div>' :
@@ -228,20 +242,7 @@ var calculateProxy = function () { // Калькулятор времени дл
     // console.log(sec);
 
     let AdminTime = '';
-    if (hrs < 13 ) {  // Окраска рамки в красный или зеленый, в зависимости от выполненной нормы.
-        AdminTime = `<table id="table1">
-                    <tr>
-                        <td>
-                            <p class="time">
-                                <h1 class="d-inline-block .center-block">Часы: &#160</h1><h1 id="hrs" class="d-inline align-center"></h1>
-                                <h2 class="d-inline-block">&#160 Минуты: &#160</h2><h1 id="min" class="d-inline"></h1>
-                                <h2 class="d-inline-block">&#160 Секунды: &#160</h2><h1 id="sec" class="d-inline"></h1>
-                            </p>
-                        </td>
-                    </tr>
-                    </table>`;
-        elem.style = "border: 4px solid red"};
-    if (hrs >= 13) {
+    if (hrs < 13) {  // Норма отменена
         AdminTime = `<table id="table1">
                     <tr>
                         <td>
@@ -254,7 +255,33 @@ var calculateProxy = function () { // Калькулятор времени дл
                     </tr>
                     </table>`;
         elem.style = "border: 4px solid #009200; background-color: lightgreen"};
-    if (hrs == 13 && min == 0 && sec == 0) {
+    // if (hrs < 13 ) { // Нормы нет
+    //     AdminTime = `<table id="table1">
+    //                 <tr>
+    //                     <td>
+    //                         <p class="time">
+    //                             <h1 class="d-inline-block .center-block">Часы: &#160</h1><h1 id="hrs" class="d-inline align-center"></h1>
+    //                             <h2 class="d-inline-block">&#160 Минуты: &#160</h2><h1 id="min" class="d-inline"></h1>
+    //                             <h2 class="d-inline-block">&#160 Секунды: &#160</h2><h1 id="sec" class="d-inline"></h1>
+    //                         </p>
+    //                     </td>
+    //                 </tr>
+    //                 </table>`;
+    //     elem.style = "border: 4px solid red"};
+    if (hrs >= 13) {  // Норма есть
+        AdminTime = `<table id="table1">
+                    <tr>
+                        <td>
+                            <p class="time">
+                                <h1 class="d-inline-block .center-block">Часы: &#160</h1><h1 id="hrs" class="d-inline align-center"></h1>
+                                <h2 class="d-inline-block">&#160 Минуты: &#160</h2><h1 id="min" class="d-inline"></h1>
+                                <h2 class="d-inline-block">&#160 Секунды: &#160</h2><h1 id="sec" class="d-inline"></h1>
+                            </p>
+                        </td>
+                    </tr>
+                    </table>`;
+        elem.style = "border: 4px solid #009200; background-color: lightgreen"};
+    if (hrs == 13 && min == 0 && sec == 0) { // Ювелир
         AdminTime = `<table id="table1">
                     <tr>
                         <td>
@@ -276,7 +303,8 @@ var calculateProxy = function () { // Калькулятор времени дл
     document.getElementById("sec").innerHTML = sec;
     
 
-    let resultat = (hrs <= 12) ? '<div style="color: red;">Нормы нет</div>' :
+    let resultat = (hrs <= 12) ? '<div style="color: #2ce614;">Норма временно отменена</div>' :
+    // let resultat = (hrs <= 12) ? '<div style="color: red;">Нормы нет</div>' :
                    (hrs == 13 && min == 0 && sec == 0) ? '<div style="color: mediumorchid;">⭐️ 💎 ⭐️ Шедеврально! Ювелирно! Оргазм! ⭐️ 💎 ⭐️</div>' :
                    (hrs == 13 && min == 0 && sec <= 4) ? '<div style="color: mediumorchid;">Ну бл*... Почти ювелир💎</div>' :
                    (hrs < 20) ? '<div style="color: #2ce614;">Норма есть</div>' :
