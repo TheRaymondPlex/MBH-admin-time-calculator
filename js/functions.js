@@ -13,7 +13,12 @@ async function AdminCalc(id) { // Отправление запроса на п�
     // window.open('http://rushogwarts.myarena.ru/time/'+id, '_blank');
     // elem.value = " ";
     elem.value = "\n\n\n= 🌐 = Получение информации = 🌐 =";
-    let response = await fetch('https://mbhrp.com/getserver/time/timeconfig?id='+id);
+    let response = await fetch('https://mbhrp.com/getserver/time/timeconfig?id='+id, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'text/plain;charset=utf-8'
+        }
+    });
     var data = await response.text();
     if (data == "EmptyAdmin") {
         // alert('Ошибка! \nЗа эту неделю данный администратор не был в профессии админа!');
@@ -47,7 +52,12 @@ async function ProxyCalc(id) { // Отправление запроса на п�
     // window.open('http://rushogwarts.myarena.ru/time/'+id, '_blank');
     // elem.value = " ";
     elem.value = "\n\n\n= 🌐 = Получение информации = 🌐 =";
-    let response = await fetch('https://mbhrp.com/getserver/time/timeconfig?id='+id);
+    let response = await fetch('https://mbhrp.com/getserver/time/timeconfig?id='+id, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'text/plain;charset=utf-8'
+        }
+    });
     var data = await response.text();
     if (data == "EmptyAdmin") {
         // alert('Ошибка! \nЗа эту неделю данный администратор не был в профессии админа!');
@@ -111,11 +121,11 @@ var calculate = function () { // Калькулятор времени для а
     document.getElementById("min").innerHTML = min;
     document.getElementById("sec").innerHTML = sec;
     if (str == 0) {alert("Поле для ввода времени пустое! \nВставьте свое время!")}
-    t1 = str.match(/\|\|\| (\d\d:\d\d:\d\d)(?:\n|$)/g);
-    //console.log(t1);
+    t1 = str.match(/\|\|\| (\d\d(?:\d|):\d\d:\d\d)(?:\n|<br \/>|$)/g);
+    console.log(t1);
     t1.forEach(function(item, i, t1) {
         //console.log(item);
-         arr = item.replace(/(\|\|\|\s)|\n/, "").split(":");
+         arr = item.replace(/(\|\|\|\s)|\n|<br \/>/, "").split(":");
          //console.log(arr);
          hrs += parseInt(arr[0], 10);
          min += parseInt(arr[1], 10);
@@ -222,11 +232,11 @@ var calculateProxy = function () { // Калькулятор времени дл
     document.getElementById("min").innerHTML = min;
     document.getElementById("sec").innerHTML = sec;
     if (str == 0) {alert("Поле для ввода времени пустое! \nВставьте свое время!")}
-    t1 = str.match(/\|\|\| (\d\d:\d\d:\d\d)(?:\n|$)/g);
+    t1 = str.match(/\|\|\| (\d\d(?:\d|):\d\d:\d\d)(?:\n|<br \/>|$)/g);
     //console.log(t1);
     t1.forEach(function(item, i, t1) {
         //console.log(item);
-         arr = item.replace(/(\|\|\|\s)|\n/, "").split(":");
+         arr = item.replace(/(\|\|\|\s)|\n|<br \/>/, "").split(":");
          //console.log(arr);
          hrs += parseInt(arr[0], 10);
          min += parseInt(arr[1], 10);
