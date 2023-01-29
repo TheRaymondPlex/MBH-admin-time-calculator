@@ -1,1 +1,1 @@
-# MyArena Time Calculator with proxy
+# MyArena Time Calculator
