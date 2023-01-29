@@ -13,9 +13,9 @@ async function AdminCalc(id) { // Отправление запроса на п�
     // window.open('http://rushogwarts.myarena.ru/time/'+id, '_blank');
     // elem.value = " ";
     elem.value = "\n\n\n= 🌐 = Получение информации = 🌐 =";
-    let response = await fetch('https://dsi3hmj2hf.execute-api.us-east-1.amazonaws.com/dev/time/'+id);
+    let response = await fetch('https://mbhrp.com/getserver/time/savedtime/'+id);
     var data = await response.text();
-    if (data == "Unable to reach upstream server") {
+    if (data == "EmptyAdmin") {
         // alert('Ошибка! \nЗа эту неделю данный администратор не был в профессии админа!');
         elem.rows = "2.5";
         elem.value = "= ⚠️ = Ошибка! = ⚠️ =\nЗа эту неделю данный администратор ещё не был в профессии админа!";
@@ -47,9 +47,9 @@ async function ProxyCalc(id) { // Отправление запроса на п�
     // window.open('http://rushogwarts.myarena.ru/time/'+id, '_blank');
     // elem.value = " ";
     elem.value = "\n\n\n= 🌐 = Получение информации = 🌐 =";
-    let response = await fetch('https://dsi3hmj2hf.execute-api.us-east-1.amazonaws.com/dev/time/'+id);
+    let response = await fetch('https://mbhrp.com/getserver/time/savedtime/'+id);
     var data = await response.text();
-    if (data == "Unable to reach upstream server") {
+    if (data == "EmptyAdmin") {
         // alert('Ошибка! \nЗа эту неделю данный администратор не был в профессии админа!');
         elem.rows = "2.5";
         elem.style = "border: 3px solid red; background-color: lightcoral";
